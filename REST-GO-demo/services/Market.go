@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/MsloveDl/HuobiProAPI/config"
-	"github.com/MsloveDl/HuobiProAPI/models"
-	"github.com/MsloveDl/HuobiProAPI/untils"
+	"../config"
+	"../models"
+	"../untils"
 )
 
 // 批量操作的API下个版本再封装
