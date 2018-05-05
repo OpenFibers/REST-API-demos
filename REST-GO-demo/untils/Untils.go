@@ -20,7 +20,13 @@ import (
 // strParams: string类型的请求参数, user=lxz&pwd=lxz
 // return: 请求结果
 func HttpGetRequest(strUrl string, mapParams map[string]string) string {
-	httpClient := &http.Client{}
+	proxy := func(_ *http.Request) (*url.URL, error) {
+		return url.Parse("http://127.0.0.1:6152")
+	}
+	transport := &http.Transport{Proxy: proxy}
+	httpClient := &http.Client{Transport: transport}
+
+	//#httpClient := &http.Client{}
 
 	var strRequestUrl string
 	if nil == mapParams {
